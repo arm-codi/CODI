@@ -6,33 +6,33 @@
 import React from 'react';
 
 export default function Imagen({ 
-  src, 
-  alt, 
+  fuente, // src
+  textoAlternativo, // alt
   forma = "normal",  // "normal", "circular"
   sombra = false,
   centrada = false,
-  ancho,
-  alto,
-  className = "",
-  ...props 
+  ancho, // width
+  alto, // height
+  claseCSS = "", // className
+  ...otrasProps 
 }) {
   const clases = [
     "imagen",
     forma === "circular" && "imagen--circular",
     sombra && "imagen--sombra",
     centrada && "imagen--centrada",
-    className
+    claseCSS
   ].filter(Boolean).join(" ");
 
   return (
     <picture>
       <img 
-        src={src} 
-        alt={alt}
+        src={fuente} 
+        alt={textoAlternativo}
         width={ancho}
         height={alto}
         className={clases}
-        {...props}
+        {...otrasProps}
       />
     </picture>
   );

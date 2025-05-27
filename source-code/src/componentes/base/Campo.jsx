@@ -6,16 +6,16 @@
 import React from 'react';
 
 export default function Campo({ 
-  etiqueta,
+  etiqueta, // label text
   tipo = "text",  // "text", "email", "password", "number", "tel", "url", "textarea"
-  placeholder = "",
-  valor,
-  onChange,
+  textoAyuda = "", // placeholder
+  valor, // value
+  alCambiar, // onChange
   requerido = false,
   error = false,
   exito = false,
-  className = "",
-  ...props 
+  claseCSS = "", // className
+  ...otrasProps 
 }) {
   const clasesEtiqueta = [
     "campo__etiqueta",
@@ -31,7 +31,7 @@ export default function Campo({
   const id = `campo-${Math.random().toString(36).substr(2, 9)}`;
 
   return (
-    <div className={`campo ${className}`}>
+    <div className={`campo ${claseCSS}`}>
       <label htmlFor={id} className={clasesEtiqueta}>
         {etiqueta}
       </label>
@@ -39,23 +39,23 @@ export default function Campo({
         <textarea
           id={id}
           className={clasesEntrada}
-          placeholder={placeholder}
+          placeholder={textoAyuda}
           value={valor}
-          onChange={onChange}
+          onChange={alCambiar}
           required={requerido}
           rows={4}
-          {...props}
+          {...otrasProps}
         />
       ) : (
         <input
           id={id}
           type={tipo}
           className={clasesEntrada}
-          placeholder={placeholder}
+          placeholder={textoAyuda}
           value={valor}
-          onChange={onChange}
+          onChange={alCambiar}
           required={requerido}
-          {...props}
+          {...otrasProps}
         />
       )}
     </div>

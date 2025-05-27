@@ -6,12 +6,17 @@
 import React from 'react';
 
 export default function Texto({ 
-  children, 
+  children, // JSX children estándar
+  contenido, // alternativo en español
+  hijos, // alternativo en español
   estilo = "normal",  // "normal", "negrita", "cursiva", "resaltado"
   color = "normal",  // "normal", "error", "exito", "advertencia"
-  className = "",
-  ...props 
+  claseCSS = "", // className
+  ...otrasProps 
 }) {
+  // Prioridad: children JSX > contenido > hijos
+  const elementosHijos = children || contenido || hijos;
+  
   const clases = [
     "texto",
     estilo === "negrita" && "texto--negrita",
@@ -20,12 +25,12 @@ export default function Texto({
     color === "error" && "texto--error",
     color === "exito" && "texto--exito",
     color === "advertencia" && "texto--advertencia",
-    className
+    claseCSS
   ].filter(Boolean).join(" ");
 
   return (
-    <span className={clases} {...props}>
-      {children}
+    <span className={clases} {...otrasProps}>
+      {elementosHijos}
     </span>
   );
 }
