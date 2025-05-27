@@ -1,0 +1,314 @@
+/* ================================
+   ESTILOS PARA COMPONENTES REACT
+   Archivo: estilos.css
+   ================================ */
+
+/* PÁRRAFO */
+.parrafo {
+  margin: 16px 0;
+  line-height: 1.6;
+  color: #333;
+  font-size: 16px;
+}
+
+.parrafo--pequeno {
+  font-size: 14px;
+}
+
+.parrafo--grande {
+  font-size: 18px;
+}
+
+.parrafo--centrado {
+  text-align: center;
+}
+
+/* IMAGEN */
+.imagen {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.imagen--circular {
+  border-radius: 50%;
+}
+
+.imagen--sombra {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.imagen--centrada {
+  margin: 0 auto;
+}
+
+/* CONTENEDOR */
+.contenedor {
+  padding: 16px;
+  margin: 8px 0;
+}
+
+.contenedor--tarjeta {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.contenedor--centrado {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor--columna {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contenedor--fila {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  align-items: center;
+}
+
+/* TEXTO */
+.texto {
+  display: inline;
+  color: #333;
+}
+
+.texto--negrita {
+  font-weight: bold;
+}
+
+.texto--cursiva {
+  font-style: italic;
+}
+
+.texto--resaltado {
+  background-color: #fff3cd;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.texto--error {
+  color: #dc3545;
+}
+
+.texto--exito {
+  color: #28a745;
+}
+
+.texto--advertencia {
+  color: #ffc107;
+}
+
+/* ENCABEZADOS */
+.cabecera {
+  margin: 24px 0 16px 0;
+  font-weight: 600;
+  color: #2c3e50;
+  line-height: 1.2;
+}
+
+.cabecera--h1 {
+  font-size: 2.5rem;
+}
+
+.cabecera--h2 {
+  font-size: 2rem;
+}
+
+.cabecera--h3 {
+  font-size: 1.75rem;
+}
+
+.cabecera--h4 {
+  font-size: 1.5rem;
+}
+
+.cabecera--h5 {
+  font-size: 1.25rem;
+}
+
+.cabecera--h6 {
+  font-size: 1rem;
+}
+
+.cabecera--centrada {
+  text-align: center;
+}
+
+/* FORMULARIO */
+.formulario {
+  background: #f8f9fa;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  margin: 16px 0;
+}
+
+.formulario--compacto {
+  padding: 16px;
+}
+
+.formulario--sombra {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* CAMPO DE FORMULARIO (LABEL + INPUT) */
+.campo {
+  margin-bottom: 16px;
+}
+
+.campo__etiqueta {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #495057;
+  font-size: 14px;
+}
+
+.campo__etiqueta--requerido::after {
+  content: " *";
+  color: #dc3545;
+}
+
+.campo__entrada {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.campo__entrada:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.campo__entrada--error {
+  border-color: #dc3545;
+}
+
+.campo__entrada--exito {
+  border-color: #28a745;
+}
+
+/* BOTONES */
+.boton {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.boton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.boton:active {
+  transform: translateY(0);
+}
+
+.boton--normal {
+  background-color: #6c757d;
+  color: white;
+}
+
+.boton--normal:hover {
+  background-color: #5a6268;
+}
+
+.boton--primario {
+  background-color: #007bff;
+  color: white;
+}
+
+.boton--primario:hover {
+  background-color: #0056b3;
+}
+
+.boton--secundario {
+  background-color: #6c757d;
+  color: white;
+}
+
+.boton--secundario:hover {
+  background-color: #545b62;
+}
+
+.boton--exito {
+  background-color: #28a745;
+  color: white;
+}
+
+.boton--exito:hover {
+  background-color: #1e7e34;
+}
+
+.boton--peligro {
+  background-color: #dc3545;
+  color: white;
+}
+
+.boton--peligro:hover {
+  background-color: #c82333;
+}
+
+.boton--advertencia {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.boton--advertencia:hover {
+  background-color: #e0a800;
+}
+
+.boton--outline {
+  background-color: transparent;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.boton--outline:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.boton--pequeno {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+
+.boton--grande {
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+.boton--completo {
+  width: 100%;
+}
+
+.boton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
