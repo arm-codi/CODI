@@ -6,8 +6,9 @@
 import React from 'react';
 
 export default function Cabecera({ 
-  contenido, // children
-  hijos, // children (alternativo)
+  children, // JSX children estándar
+  contenido, // alternativo en español
+  hijos, // alternativo en español
   nivel = 1,  // 1-6
   centrada = false,
   claseCSS = "", // className
@@ -15,8 +16,8 @@ export default function Cabecera({
 }) {
   const Tag = `h${Math.min(Math.max(nivel, 1), 6)}`;
   
-  // Usar contenido o hijos como children
-  const elementosHijos = contenido || hijos;
+  // Prioridad: children JSX > contenido > hijos
+  const elementosHijos = children || contenido || hijos;
   
   const clases = [
     "cabecera",

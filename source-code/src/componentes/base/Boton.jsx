@@ -6,8 +6,9 @@
 import React from 'react';
 
 export default function Boton({ 
-  contenido, // children
-  hijos, // children (alternativo)
+  children, // JSX children estándar
+  contenido, // alternativo en español
+  hijos, // alternativo en español
   tipo = "normal",  // "normal", "primario", "secundario", "exito", "peligro", "advertencia", "outline"
   tamano = "normal",  // "pequeno", "normal", "grande"
   completo = false,
@@ -17,8 +18,8 @@ export default function Boton({
   claseCSS = "", // className
   ...otrasProps 
 }) {
-  // Usar contenido o hijos como children
-  const elementosHijos = contenido || hijos;
+  // Prioridad: children JSX > contenido > hijos
+  const elementosHijos = children || contenido || hijos;
   
   const clases = [
     "boton",
